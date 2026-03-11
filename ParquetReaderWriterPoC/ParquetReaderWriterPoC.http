@@ -1,0 +1,28 @@
+@ParquetReaderWriterPoC_HostAddress = http://localhost:5227
+
+POST {{ParquetReaderWriterPoC_HostAddress}}/parquet/write
+Content-Type: application/json
+
+{
+  "records": [
+    {
+      "id": 1,
+      "name": "Alpha",
+      "createdAtUtc": "2026-01-01T10:00:00Z",
+      "score": 95.2
+    },
+    {
+      "id": 2,
+      "name": "Beta",
+      "createdAtUtc": "2026-01-01T10:10:00Z",
+      "score": 88.7
+    }
+  ]
+}
+
+###
+
+GET {{ParquetReaderWriterPoC_HostAddress}}/parquet/read
+Accept: application/json
+
+###
